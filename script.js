@@ -361,9 +361,9 @@
             }
             for (let i = 0; i < 40; i++) {
                 const count = getCountOfPixelsInY(i);
-                if (count === 20) for (let j = 0; j < pieces.length; j++) {
+                if (count === 20) {
                     linesPopped++;
-                    pieces[j].matrix = pieces[j].matrix.filter((m, n) => n !== pieces[j].y - i);
+                    for (let j = 0; j < pieces.length; j++) pieces[j].matrix = pieces[j].matrix.filter((m, n) => n !== pieces[j].y - i);
                 }
             }
         }
